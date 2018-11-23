@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return response()->json(['message' => 'hi']);
 });
 
 Route::get('/warband', 'WarbandController@index');

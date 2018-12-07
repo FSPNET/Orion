@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/warband', 'WarbandController@index');
+Route::get('/factorio/server-settings', 'FactorioController@server');
+Route::get('/factorio/map-settings', 'FactorioController@map');
+Route::get('/factorio/map-gen-settings', 'FactorioController@gen');

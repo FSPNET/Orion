@@ -23,6 +23,7 @@ Thumbs.db
 .phpintel/*
 /.phpintel/*
 .phpstorm.meta.php
+.php_cs.cache
 
 ### VS Code Vendor Configs ###
 /.vscode

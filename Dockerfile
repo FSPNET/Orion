@@ -1,13 +1,12 @@
 FROM fspnetwork/php
 
-WORKDIR /app
-COPY . /app
+WORKDIR /data/www/orion
+COPY . .
 
 RUN cp .env.production .env \
     && composer install --no-dev --optimize-autoloader \
     && chmod -R 777 storage/* bootstrap/cache \
-    && php artisan key:generate
+    && php artisan key:generate \
+    && php artisan config:cache
 
-EXPOSE 8080
-
-CMD php artisan serve --host=0.0.0.0 --port 8080
+VOLUME [ "/data/www/orion" ]

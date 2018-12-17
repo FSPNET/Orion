@@ -29,26 +29,25 @@ class WarbandController extends Controller
 
         $errors = $validator->errors();
 
-        if ($errors->count()){
+        if ($errors->count()) {
             return $errors->all();
         }
 
-       $data['pass_admin'] = (string) $request->input('password_admin');
-       $data['pass_private'] =
-           (string) $request->has('password_private') ? $request->input('password_private') : "PRIVATEPASS";
-       $data['server_name'] = (string) $request->input('server_name');
-       $data['welcome_message'] =
-           (string) $request->has('welcome_message') ? $request->input('welcome_message') : "Welcome";
-       $data['valve_anti_cheat'] =
-           (bool) $request->has('valve_anti_cheat') ? $request->input('valve_anti_cheat') : 0;
-       $data['mission'] = (string) $request->input('mission');
-       $data['max_players'] = (int) $request->has('max_players') ? $request->input('max_players') : 32;
-       $data['port'] = (int) $request->input('port');
-       $data['steam_port'] = (int) $request->has('steam_port') ? $request->input('steam_port') : false;
+        $data['pass_admin'] = (string) $request->input('password_admin');
+        $data['pass_private'] =
+            (string) $request->has('password_private') ? $request->input('password_private') : 'PRIVATEPASS';
+        $data['server_name'] = (string) $request->input('server_name');
+        $data['welcome_message'] =
+            (string) $request->has('welcome_message') ? $request->input('welcome_message') : 'Welcome';
+        $data['valve_anti_cheat'] =
+            (bool) $request->has('valve_anti_cheat') ? $request->input('valve_anti_cheat') : 0;
+        $data['mission'] = (string) $request->input('mission');
+        $data['max_players'] = (int) $request->has('max_players') ? $request->input('max_players') : 32;
+        $data['port'] = (int) $request->input('port');
+        $data['steam_port'] = (int) $request->has('steam_port') ? $request->input('steam_port') : false;
 
-       return response()
-           ->view('warband.native', $data)
-           ->header('Content-Type', 'text/plain');
+        return response()
+            ->view('warband.native', $data)
+            ->header('Content-Type', 'text/plain');
     }
-
 }

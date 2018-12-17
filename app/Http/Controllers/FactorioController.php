@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use function GuzzleHttp\Psr7\str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -10,11 +9,11 @@ class FactorioController extends Controller
 {
     public function __construct()
     {
-        $this->verylow = "very-low";
-        $this->low = "low";
-        $this->normal = "normal";
-        $this->high = "high";
-        $this->veryhigh = "high";
+        $this->verylow = 'very-low';
+        $this->low = 'low';
+        $this->normal = 'normal';
+        $this->high = 'high';
+        $this->veryhigh = 'high';
     }
 
     public function gen(Request $request)

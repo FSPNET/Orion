@@ -62,7 +62,7 @@ class MinecraftController extends Controller
             return $errors->all();
         }
 
-        $data['create_time'] = date('D M j G:i:s T Y');
+        $data['create_time'] = $this->time;
         $data['generator_settings'] =
             (string) $request->has('generator-settings') ? $request->input('generator-settings') : '';
         $data['op_permission_level'] =

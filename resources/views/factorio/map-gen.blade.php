@@ -1,7 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
 {
+    "_create_time": "{{ $create_time }}"
+    "_generated_by": "{{ trans('common.generated_by') }}"
     "terrain_segmentation": "{{ $terrain_segmentation }}",
     "water": "{{ $water }}",
     "width": {{ $width }},
@@ -33,4 +32,3 @@
 
     "seed": {{ $seed }}
 }
-@endsection

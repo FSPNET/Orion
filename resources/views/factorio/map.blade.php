@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
 {
     "difficulty_settings":
     {
@@ -114,4 +111,3 @@
     },
     "max_failed_behavior_count": 3
 }
-@endsection

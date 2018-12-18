@@ -1,6 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
+# Create time : {{ $create_time }}
+# {{ trans('common.generated_by') }}
+#
 #WARNING: Make sure that you change the capital values with proper ones.
 #uncomment the line below when you set a valid administrator password
 set_pass_admin {{ $pass_admin }}
@@ -70,5 +70,4 @@ set_steam_port {{ $port }}
 set_server_log_folder Logs
 set_server_ban_list_file Logs\ban_list.txt
 start;
-@endsection
 

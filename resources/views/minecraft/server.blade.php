@@ -1,8 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
 #Minecraft server properties
 #{{ $create_time }}
+#{{trans('common.generated_by')}}
 generator-settings={{ $generator_settings }}
 op-permission-level={{ $op_permission_level }}
 allow-nether={{ $allow_nether }}
@@ -38,4 +36,3 @@ spawn-monsters={{ $spawn_monsters }}
 view-distance={{ $view_distance }}
 generate-structures={{ $generate_structures }}
 motd={{ $motd }}
-@endsection

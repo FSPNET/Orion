@@ -33,6 +33,7 @@ class WarbandController extends Controller
             return $errors->all();
         }
 
+        $data['create_time'] = $this->time;
         $data['pass_admin'] = (string) $request->input('password_admin');
         $data['pass_private'] =
             (string) $request->has('password_private') ? $request->input('password_private') : 'PRIVATEPASS';

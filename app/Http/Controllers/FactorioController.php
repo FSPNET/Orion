@@ -14,6 +14,7 @@ class FactorioController extends Controller
         $this->normal = 'normal';
         $this->high = 'high';
         $this->veryhigh = 'high';
+        $this->time = date('D M j G:i:s T Y');
     }
 
     public function gen(Request $request)
@@ -49,6 +50,7 @@ class FactorioController extends Controller
             return $errors->all();
         }
 
+        $data['create_time'] = $this->time;
         $data['terrain_segmentation'] =
             (string) $request->has('terrain_segmentation') ? $request->input('terrain_segmentation') : $this->normal;
         $data['water'] = (string) $request->has('water') ? $request->input('water') : $this->normal;
@@ -112,6 +114,7 @@ class FactorioController extends Controller
             return $errors->all();
         }
 
+        $data['create_time'] = $this->time;
         $data['name'] = (string) $request->input('name');
         $data['description'] = (string) $request->has('sand') ? $request->input('sand')
             : 'Description of the game that will appear in the listing';

@@ -2,6 +2,8 @@
 
 @section('content')
 {
+    "_create_time": "{{ $create_time }}"
+    "_generated_by": "{{ trans('common.generated_by') }}"
     "name": "{{ $name }}",
     "description": "{{ $description}}",
     "tags": ["{!! $tags !!}"],

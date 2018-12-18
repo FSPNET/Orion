@@ -8,6 +8,8 @@ class ApiController extends Controller
 {
     public function show()
     {
+        $data['arma3_server_url'] = route('api.arma3.server');
+        $data['arma3_network_url'] = route('api.arma3.network');
         $data['factorio_server_url'] = route('api.factorio.server');
         $data['factorio_map_url'] = route('api.factorio.map');
         $data['factorio_map_gen_url'] = route('api.factorio.mapgen');

@@ -1,0 +1,44 @@
+image: fspnetwork/php:latest
+
+cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+        - vendor/
+
+services:
+    - docker:dind
+
+stages:
+    - build
+    - test
+    - build_image
+
+variables:
+    DOCKER_DRIVER: overlay2
+
+build:
+    stage: build
+    artifacts:
+        paths:
+            - vendor/
+    script:
+        - cp .env.production .env
+        - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts --optimize-autoloader
+        - chmod -R 777 storage/* bootstrap/cache
+        - php artisan key:generate
+        - php artisan config:cache
+
+test:
+    stage: test
+    dependencies:
+        - build
+    script:
+        - php vendor/bin/phpunit --coverage-text --colors=never
+
+build_image:
+    image: docker:stable
+    stage: build_image
+    script:
+        - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+        - docker build -t $CI_REGISTRY_IMAGE .
+        - docker push $CI_REGISTRY_IMAGE

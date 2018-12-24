@@ -6,7 +6,7 @@
     "_generated_by": "{{ trans('common.generated_by') }}"
     "name": "{{ $name }}",
     "description": "{{ $description}}",
-    "tags": ["{!! $tags !!}"],
+    "tags": @if($tags == null)[]@else["{!! $tags !!}"]@endif,
 
     "_comment_max_players": "Maximum number of players allowed, admins can join even a full server. 0 means unlimited.",
     "max_players": {{ $max_players }},

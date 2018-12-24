@@ -59,7 +59,7 @@ class MinecraftController extends Controller
         $errors = $validator->errors();
 
         if ($errors->count()) {
-            return $errors->all();
+            return response($errors->all(), 400);
         }
 
         $data['create_time'] = $this->time;
@@ -113,6 +113,6 @@ class MinecraftController extends Controller
 
         return response()
             ->view('minecraft.server', $data)
-            ->header('Content-Type', 'text/plain');
+            ->header('Content-Type', 'text/plain; charset=UTF-8');
     }
 }

@@ -47,7 +47,7 @@ class FactorioController extends Controller
         $errors = $validator->errors();
 
         if ($errors->count()) {
-            return $errors->all();
+            return response($errors->all(), 400);
         }
 
         $data['create_time'] = $this->time;
@@ -111,7 +111,7 @@ class FactorioController extends Controller
         $errors = $validator->errors();
 
         if ($errors->count()) {
-            return $errors->all();
+            return response($errors->all(), 400);
         }
 
         $data['create_time'] = $this->time;
@@ -119,7 +119,7 @@ class FactorioController extends Controller
         $data['description'] = (string) $request->has('sand') ? $request->input('sand')
             : 'Description of the game that will appear in the listing';
         $data['tags'] =
-            (string) $request->has('tags') ? str_replace(',', '","', $request->input('tags')) : '[ "game", "tags" ]';
+            (string) $request->has('tags') ? str_replace(',', '","', $request->input('tags')) : 'null';
         $data['max_players'] = (int) $request->has('max_players') ? $request->input('max_players') : 0;
         $data['public'] = (bool) $request->has('token') ? $request->input('public') : 'false';
         $data['lan'] = (bool) $request->has('lan') ? $request->input('lan') : 'true';

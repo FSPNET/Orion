@@ -30,7 +30,7 @@ class WarbandController extends Controller
         $errors = $validator->errors();
 
         if ($errors->count()) {
-            return $errors->all();
+            return response($errors->all(), 400);
         }
 
         $data['create_time'] = $this->time;
@@ -49,6 +49,6 @@ class WarbandController extends Controller
 
         return response()
             ->view('warband.native', $data)
-            ->header('Content-Type', 'text/plain');
+            ->header('Content-Type', 'text/plain; charset=UTF-8');
     }
 }

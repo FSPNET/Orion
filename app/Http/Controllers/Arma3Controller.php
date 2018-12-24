@@ -45,7 +45,7 @@ class Arma3Controller extends Controller
         $errors = $validator->errors();
 
         if ($errors->count()) {
-            return $errors->all();
+            return response($errors->all(), 400);
         }
 
         $data['create_time'] = $this->time;
@@ -75,7 +75,7 @@ class Arma3Controller extends Controller
 
         return response()
             ->view('arma3.server', $data)
-            ->header('Content-Type', 'text/plain');
+            ->header('Content-Type', 'text/plain; charset=UTF-8');
     }
 
     public function network(Request $request)
@@ -103,7 +103,7 @@ class Arma3Controller extends Controller
         $errors = $validator->errors();
 
         if ($errors->count()) {
-            return $errors->all();
+            return response($errors->all(), 400);
         }
 
         $data['create_time'] = $this->time;
@@ -135,6 +135,6 @@ class Arma3Controller extends Controller
 
         return response()
             ->view('arma3.network', $data)
-            ->header('Content-Type', 'text/plain');
+            ->header('Content-Type', 'text/plain; charset=UTF-8');
     }
 }

@@ -1,12 +1,9 @@
-.git
-.github
+.git*
 .idea
 .env
 .editorconfig
-.gitattributes
-.gitignore
-.gitlab-ci.yaml
-.php_cs.cache
+.php*
+.chglog
 vendor
 docker-compose.yaml
 Dockerfile
@@ -16,3 +13,5 @@ storage/framework/cache/**
 storage/framework/sessions/**
 storage/framework/views/**
 README.md
+Orion.png
+CHANGELOG.md

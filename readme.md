@@ -1,10 +1,13 @@
-# Orion
+<p align="center"><img src="Orion.png"></p>
 
-[![MicroBadger Size](https://img.shields.io/microbadger/image-size/fspnetwork/orion.svg?style=for-the-badge)](https://microbadger.com/#/images/fspnetwork/orion)
-[![Docker Automated build](https://img.shields.io/docker/automated/fspnetwork/orion.svg?style=for-the-badge)](https://hub.docker.com/r/fspnetwork/orion/)
-[![Docker Build Status](https://img.shields.io/docker/build/fspnetwork/orion.svg?style=for-the-badge)](https://hub.docker.com/r/fspnetwork/orion/)
-[![GitHub](https://img.shields.io/github/license/fspnet/orion.svg?style=for-the-badge)](https://github.com/fspnet/orion/blob/master/LICENSE)
-[![Release version](https://img.shields.io/github/release/fspnet/orion.svg?style=for-the-badge)](https://github.com/FSPNet/Orion/releases)
+<p align="center">
+    <a href="https://microbadger.com/#/images/fspnetwork/orion"><img src="https://img.shields.io/microbadger/image-size/fspnetwork/orion.svg?style=flat-square" alt="MicroBadger Size"></a>
+    <a href="https://hub.docker.com/r/fspnetwork/orion/"><img src="https://img.shields.io/docker/automated/fspnetwork/orion.svg?style=flat-square" alt="Docker Automated build"></a>
+    <a href="https://hub.docker.com/r/fspnetwork/orion/"><img src="https://img.shields.io/docker/build/fspnetwork/orion.svg?style=flat-square" alt="Docker Build Status"></a>
+    <a href="https://microbadger.com/#/images/fspnetwork/orion"><img src="https://img.shields.io/gitlab/pipeline/FSPNetwork/Orion/develop.svg?style=flat-square" alt="GitLab CI"></a>
+    <a href="https://github.com/fspnet/orion/blob/master/LICENSE"><img src="https://img.shields.io/github/license/fspnet/orion.svg?style=flat-square" alt="License"></a>
+    <a href="https://github.com/FSPNet/Orion/releases"><img src="https://img.shields.io/github/release/fspnet/orion.svg?style=flat-square" alt="Release version"></a>
+</p>
 
 ## About Orion
 
